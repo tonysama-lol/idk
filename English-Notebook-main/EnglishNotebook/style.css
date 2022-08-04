@@ -1,0 +1,27 @@
+.TextArea{
+    width: 700px; 
+}
+.textarea{
+    display: block;
+    background-color: whitesmoke;
+    overflow: hidden;
+    resize: both;
+    outline: none;
+    line-height: -5px;
+    min-height: 50px;
+    min-width: 100%;
+    font-size: 35px;
+    font-family: Arial;
+    font-weight: bold;
+    padding-inline: 1em;
+    padding-block: 1em;
+    border-radius: 15px;
+}
+span.textarea[contenteditable] {
+    display: block;
+}
+span.textarea[contenteditable]:empty::before {
+    color:grey;
+    content: 'Enter your english notebook';
+    display: inline-block;
+}
