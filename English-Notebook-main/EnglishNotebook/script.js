@@ -1,42 +1,31 @@
 function displaySpan(){
-    var span_Text = document.getElementById("textarea").innerText;
+    var span_Text = document.getElementById("textarea").innerText
     var temp = ""
-    var EnglishWord = new Array(1000);
-    var VietnameseWord = new Array(1000);
-    var position = 0;
-    var ifFirst = true;
+    var EnglishWord = new Array(1000)
+    var VietnameseWord = new Array(1000)
+    var position = 0
     for (var i=0;i<span_Text.length;i++){
-        if(i == span_Text.length-1){
-            temp+=span_Text[i];
-            VietnameseWord[position] = temp;
-            position++;
+        if(span_Text[i] == span_Text.length-1){
+            VietnameseWord[position] = temp
+            break
         }
-        if(span_Text[i]=='-'){
-            if(ifFirst){
-                ifFirst = false;
-                EnglishWord[position] = temp;
-                temp = "";
-            } 
-            else{
-                ifFirst = true;
-                VietnameseWord[position] = temp;
-                temp = ""
-                position++;
-            }
+        if(span_Text[i] == '-'){
+            EnglishWord[position] = temp
+            temp=""
+        }
+        else if(span_Text[i] == '\n'){
+            VietnameseWord[position] = temp
+            position++
+            temp="" 
         }
         else{
             temp+=span_Text[i];
         }
     }
-    for(var i=0;i<position;++i){
-        if(EnglishWord[i] == undefined){
-            console.log(VietnameseWord[i]);
+    for(var i=0;i<=position;++i){
+        if(EnglishWord[i] == undefined || VietnameseWord[i] == undefined){
+            document.write("<br></br>")
         }
-        else if(VietnameseWord[i] == undefined){
-            console.log(EnglishWord[i]);
-        }
-        else{
-            console.log(EnglishWord[i] + "=" + VietnameseWord[i]);
-        }
+        else document.write(EnglishWord[i] + VietnameseWord[i])
     }
 }

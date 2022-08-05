@@ -1,7 +1,12 @@
+body{
+    font-family: Arial;
+    font-weight: bold;
+}
 .TextArea{
     width: 700px; 
 }
 .textarea{
+    color: rgb(14, 199, 240);
     display: block;
     background-color: whitesmoke;
     overflow: hidden;
@@ -11,17 +16,31 @@
     min-height: 50px;
     min-width: 100%;
     font-size: 35px;
-    font-family: Arial;
-    font-weight: bold;
     padding-inline: 1em;
     padding-block: 1em;
-    border-radius: 15px;
+    border-radius: 35px;
 }
 span.textarea[contenteditable] {
     display: block;
 }
 span.textarea[contenteditable]:empty::before {
-    color:grey;
+    color: rgb(14, 199, 240);
     content: 'Enter your english notebook';
     display: inline-block;
+}
+span.textarea[contenteditable]:empty:focus::before {
+    content: 'Start typing....';
+}
+.SubmitNotebook{
+    font-weight: bold;
+    background-color: rgb(14, 199, 240);
+    color: white;
+    border: none;
+    margin-top: 5px;
+    width: 150px;
+    height: 50px;
+    border-radius: 25px;
+}
+.SubmitNotebook:hover{
+    opacity: 0.8;
 }
